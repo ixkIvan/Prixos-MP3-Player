@@ -46,20 +46,20 @@ public class PlayList implements Observer {
      *
      * @param fileNames The array of audio filenames for this play list.
      */
-    public PlayList(String fileNames[]) {
-        for( int i = 0 ; i < fileNames.length ; ++i ) {
-            AudioSource source ;
-            try {
-                source = new AudioSource(fileNames[i]) ;
-                sources.add(source) ;
-            } catch (AudioSourceException ex) {
-                System.out.print("File <" + fileNames[i] + "> excluded ") ;
-                System.out.println(ex) ;
-            }
-        }
-        player = AudioPlayer.getPlayer() ;
-        player.addObserver(this) ;
-    }
+   //  public PlayList(String fileNames[]) {
+//         for( int i = 0 ; i < fileNames.length ; ++i ) {
+//             AudioSource source ;
+//             try {
+//                 source = new AudioSource(fileNames[i]) ;
+//                 sources.add(source) ;
+//             } catch (AudioSourceException ex) {
+//                 System.out.print("File <" + fileNames[i] + "> excluded ") ;
+//                 System.out.println(ex) ;
+//             }
+//         }
+//         player = AudioPlayer.getPlayer() ;
+//         player.addObserver(this) ;
+//     }
     
     /**
      * This is a new constuctor taking the more abstract Iterator of filenames as parameter
