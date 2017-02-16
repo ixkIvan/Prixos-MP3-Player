@@ -11,6 +11,7 @@
 import java.util.Observer ;
 import java.util.Observable ;
 import java.util.ArrayList ;
+import java.util.Iterator;
 
 /*
  * SWEN383 classes for managing and playing audio files.
@@ -59,6 +60,27 @@ public class PlayList implements Observer {
         player = AudioPlayer.getPlayer() ;
         player.addObserver(this) ;
     }
+    
+    /**
+     * This is a new constuctor taking the more abstract Iterator of filenames as parameter
+     * @param fileNames The iterator of audio filenames for this play list
+     */
+    public PlayList(Iterator<String> fileNames){
+       while(fileNames.hasNext()){
+         AudioSource source;
+         try{
+            source=new AudioSource(fileNames.next());
+            sources.add(source);
+         }
+         catch(AudioSourceException ase){
+            System.out.print("File <" + fileNames.next() + "> excluded ") ;
+                System.out.println(ase) ;
+         }
+       }
+       player = AudioPlayer.getPlayer() ;
+        player.addObserver(this) ;
+    }
+
 
     /**
      * Return the size of the play list (the number of
