@@ -6,17 +6,18 @@
 
 import edu.rit.se.swen383.audio.AudioSource ;
 import java.util.Iterator;
+import java.util.*;
 
 public class MP3Player {
     /*
      * Driver with a simple command language to control the
      * audio playback.
      */
-    public static void main(Iterator<String> args) {
+    public static void main(String [] args) {
         /*
          * We need at least one file to play.
          */
-        if( args.hasNext() ) {
+        if( args.length > 0 ) {
             println("Usage: MP3Player mp3file ...") ;
             return ;
         }
@@ -24,11 +25,12 @@ public class MP3Player {
         /* 
          * Convert args[] into Iterator
          */
+         Iterator<String> iteratorArgs = Arrays.asList(args).iterator();
          
         /*
          * Make the play list.
          */
-        PlayList pl = new PlayList(args) ;
+        PlayList pl = new PlayList(iteratorArgs) ;
 
         /*
          * Command loop.
