@@ -14,6 +14,16 @@ public class MP3Player {
      * audio playback.
      */
     public static void main(String [] args) {
+    	
+    	
+    	//FOR OBSERVERS
+    	
+    	InformationGrabber informationGrabber = new InformationGrabber();
+    	
+    	//This is the Observer that will get the information from the current playing file.
+    	InformationObserver observer1 = new InformationObserver(informationGrabber);
+    	
+    	
         /*
          * We need at least one file to play.
          */
@@ -95,10 +105,23 @@ public class MP3Player {
                 if( i == (-1) ) {
                     println("Player is idle") ;
                 } else if( as != null ) {
-                    int duration = as.getDuration() ;
-                    int secs = duration % 60 ;
-                    int mins = duration / 60 ;
+                   // int duration = as.getDuration() ;
+                  //  int secs = duration % 60 ;
+                   // int mins = duration / 60 ;
 
+                    
+                    //SETTING INFO FOR OBSERVER
+                    informationGrabber.setDuration(as.getDuration());
+                    informationGrabber.setFileName(as.getFileName());
+                    informationGrabber.setTitle(as.getTitle());
+                    informationGrabber.setArtist(as.getArtist());
+                    informationGrabber.setAlbum(as.getAlbum());
+                    informationGrabber.setGenre(as.getGenre());
+                    
+                    
+                    /*
+                     * 
+                     *  WITHOUT THE OBSERVER
                     println("Index:    " + i) ;
                     println("File:     " + as.getFileName()) ;
                     println("Title:    " + as.getTitle()) ;
@@ -106,6 +129,7 @@ public class MP3Player {
                     println("Album:    " + as.getAlbum()) ;
                     println("Genre:    " + as.getGenre()) ;
                     System.out.printf ("Duration: %d:%02d\n", mins, secs) ;
+                    */
                 }
             }
             if( command == 'p' ) {
