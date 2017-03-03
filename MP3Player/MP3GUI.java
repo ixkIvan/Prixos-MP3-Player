@@ -10,6 +10,7 @@ public class MP3GUI extends JFrame implements ActionListener
    private JMenuItem jmiHelp;
    private JButton jbPlay, jbPause, jbReplay, jbNext, jbPrev;
    private JTextField jtfSong;
+   private JTextArea jtaInfo;
    private MusicPlayer mp3 = new MusicPlayer();
    
    // main class
@@ -34,7 +35,6 @@ public class MP3GUI extends JFrame implements ActionListener
       */
       PlayList pl = new PlayList(iteratorArgs) ;
       
-      new MP3GUI();
       
    }
    
@@ -92,11 +92,11 @@ public class MP3GUI extends JFrame implements ActionListener
    public void actionPerformed(ActionEvent ae){
       Object choice = ae.getSource();
       
-      if(choice == jbPlay){
+       if(choice == jbPlay){
          PlaySong play = new PlaySong(mp3);
 		   DeviceButton button = new DeviceButton(play);
-		   button.press();
-      }
+ 		   button.press();
+       }
       else if(choice == jbPause){
          PauseSong pause = new PauseSong(mp3);
 		   DeviceButton button = new DeviceButton(pause);
