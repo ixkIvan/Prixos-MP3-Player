@@ -1,0 +1,20 @@
+Patterns used:
+- observer
+- command
+- iterator
+
+New classes:
+- Command.java
+- DeviceButton.java
+- InformationGrabber.java
+- InformationObserver.java
+- MP3GUI.java (this is a main class that implements the Command - not yet integrated into 
+	the main MP3Player)
+- MusicPlayer.java
+- NextSong.java
+- Observer.java
+- PauseSong.java
+- PlaySong.java
+- PrevSong.java
+- ReplaySong.java
+- Subject.java
