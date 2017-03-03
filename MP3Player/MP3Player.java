@@ -4,10 +4,9 @@
  * looking for simple commands to control playback.
  */
 
-import edu.rit.se.swen383.audio.AudioSource ;
 import java.util.Iterator;
 import java.util.*;
-
+import edu.rit.se.swen383.audio.AudioSource ;
 public class MP3Player {
     /*
      * Driver with a simple command language to control the

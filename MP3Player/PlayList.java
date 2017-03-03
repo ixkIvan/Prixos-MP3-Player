@@ -4,7 +4,7 @@
  * Once the list is created, the <code>AudioSources</audio> in the files
  * can be played.
  */
-
+import edu.rit.se.swen383.audio.AudioSource ;
 /*
  * Standard Java classes
  */
@@ -16,7 +16,7 @@ import java.util.Iterator;
 /*
  * SWEN383 classes for managing and playing audio files.
  */
-import edu.rit.se.swen383.audio.AudioPlayer ;
+ import edu.rit.se.swen383.audio.AudioPlayer ;
 import edu.rit.se.swen383.audio.AudioSource ;
 import edu.rit.se.swen383.audio.AudioSourceException ;
 
